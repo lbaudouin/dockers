@@ -1,0 +1,12 @@
+# Failed to pull images
+
+[runners.docker]
+  pull_policy = "if-not-present"
+
+
+# gitlab runner
+
+docker run -d --name gitlab-runner --restart always \
+  -v /var/run/docker.sock:/var/run/docker.sock \
+  -v /etc/gitlab-runner:/etc/gitlab-runner \
+  gitlab/gitlab-runner:latest
